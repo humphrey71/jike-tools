@@ -1,15 +1,13 @@
 import { useState } from "react"
 
+import "./style.css"
+
 function IndexOptions() {
   const [data, setData] = useState("")
 
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        padding: 16
-      }}>
+      className="flex flex-col items-center justify-center h-screen">
       <h1>
         Welcome to your <a href="https://www.plasmo.com">Plasmo</a> Extension!
       </h1>

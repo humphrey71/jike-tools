@@ -1,15 +1,12 @@
 import { useState } from "react"
 
+import "./style.css"
+
 function IndexPopup() {
   const [data, setData] = useState("")
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        padding: 16
-      }}>
+    <div className="flex flex-col items-center justify-center size-96">
       <h1>
         Welcome to your <a href="https://www.plasmo.com">Plasmo</a> Extension!
       </h1>
