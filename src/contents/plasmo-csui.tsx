@@ -1,8 +1,11 @@
+import type { PlasmoCSConfig, PlasmoGetOverlayAnchorList } from "plasmo"
+
+import { Button } from "@/components/ui/button"
+import { useStorage } from "@plasmohq/storage/hook"
 import { useReducer } from "react"
 
 import cssText from "data-text:@/style.css"
-import type { PlasmoCSConfig, PlasmoGetOverlayAnchorList } from "plasmo"
-import { Button } from "@/components/ui/button"
+import { sendToBackground } from "@plasmohq/messaging"
 
 export const getStyle = () => {
     const style = document.createElement("style")
@@ -21,10 +24,19 @@ export const getOverlayAnchorList: PlasmoGetOverlayAnchorList = async () => {
 }
 
 const PlasmoOverlay = () => {
-    const [count, increase] = useReducer((c) => c + 1, 0)
+    const [count, setCount] = useStorage("count", 0)
+
+    sendToBackground({
+        name: "increment",
+        body: {
+            count
+        }
+    }).then((res) => {
+        console.log(res)
+    })
 
     return (
-        <Button variant="default" onClick={() => increase()} >
+        <Button variant="default" onClick={() => setCount(count + 1)} >
             Count:
             <span className="inline-flex items-center justify-center w-8 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
                 {count}
