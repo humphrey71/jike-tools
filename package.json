@@ -1,8 +1,8 @@
 {
-  "name": "browser-plugin-template",
-  "displayName": "Browser plugin template",
+  "name": "browser-extension-template",
+  "displayName": "Browser extension template",
   "version": "0.0.1",
-  "description": "This is my browser plugin template",
+  "description": "This is my browser extension template",
   "author": "Humphrey Liu <humphrey.liu@foxmail.com>",
   "scripts": {
     "dev": "plasmo dev",
