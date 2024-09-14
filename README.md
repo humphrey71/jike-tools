@@ -1,3 +1,24 @@
+Use this template to create a new Plasmo extension.
+1. Create a new repository using this template, [New repository](https://github.com/new?template_name=browser-extension-template&template_owner=humphrey71)
+    * Check "Include all branches"
+    * make sure the repository is private
+2. Clone the repository
+3. Add this repository as a remote to keep it synced
+```bash
+git remote add upstream https://github.com/humphrey71/browser-extension-template.git
+git fetch upstream
+git merge upstream/main --allow-unrelated-histories
+```
+4. Contribution back to this repository by creating a Pull Request using `template` branch
+```bash
+git checkout template
+git pull upstream template
+# make changes to your branch and commit, then
+git push
+```
+
+---
+
 This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
 
 ## Getting Started
